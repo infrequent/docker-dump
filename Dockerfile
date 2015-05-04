@@ -10,7 +10,7 @@ FROM phusion/baseimage:0.9.9
 CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
-RUN apt-get install -y python3-dev
+
 RUN apt-get update
 RUN apt-get install -y python3-dev
 RUN pip install virtualenv
