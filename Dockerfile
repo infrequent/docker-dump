@@ -8,7 +8,7 @@ FROM phusion/baseimage:0.9.9
 #FROM ubuntu
 
 # Use baseimage-docker's init system + bash.
-CMD ["/sbin/my_init  -- bash -l"]
+CMD ["/sbin/my_init -- bash -l"]
 
 # ...put your own build instructions here...
 
