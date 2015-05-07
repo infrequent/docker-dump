@@ -13,7 +13,7 @@ CMD ["/sbin/my_init"]
 # ...put your own build instructions here...
 
 RUN apt-get update
-RUN apt-get upgrade -y
+#RUN apt-get upgrade -y
 RUN apt-get install -y libssl-dev libcurl4-gnutls-dev git-core libgnutls-dev lua5.1 liblua5.1-0 liblua5.1-0-dev screen python-dev python-pip bzip2 zlib1g-dev make curl unzip wget python-software-properties
 RUN apt-add-repository -y ppa:archiveteam/wget-lua && apt-get update
 RUN apt-get install -y wget-lua
