@@ -13,9 +13,7 @@ CMD ["/sbin/my_init"]
 # ...put your own build instructions here...
 
 RUN apt-get update
-#RUN apt-get upgrade -y
-RUN apt-get install -y libssl-dev libcurl4-gnutls-dev git-core libgnutls-dev lua5.1 liblua5.1-0 liblua5.1-0-dev screen python-dev python-pip bzip2 zlib1g-dev make curl unzip wget python-software-properties
-RUN apt-add-repository -y ppa:archiveteam/wget-lua
+RUN apt-get install -y libssl-dev libcurl4-gnutls-dev git-core libgnutls-dev lua5.1 liblua5.1-0 liblua5.1-0-dev screen python-dev python-pip bzip2 zlib1g-dev make curl unzip wget
 
 # Fix dnsmasq bug (see https://github.com/nicolasff/docker-cassandra/issues/8#issuecomment-36922132)
 RUN echo 'user=root' >> /etc/dnsmasq.conf
@@ -30,4 +28,5 @@ RUN pip install --upgrade seesaw requests
 
 
 # Clean up APT when done.
+RUN apt-get autoremove
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
